@@ -1,13 +1,814 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diatonic Scales Guitar Theory Web Application</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <i class="fas fa-guitar nav-icon"></i>
+                    <span class="nav-title">Guitar Theory</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links desktop-nav">
+                    <button class="nav-btn active" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </button>
+                    <button class="nav-btn" data-section="notes">
+                        <i class="fas fa-music"></i>
+                        <span>Notes</span>
+                    </button>
+                    <button class="nav-btn" data-section="tuning">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Tuning</span>
+                    </button>
+                    <button class="nav-btn" data-section="fretboard">
+                        <i class="fas fa-guitar"></i>
+                        <span>Fretboard</span>
+                    </button>
+                    <button class="nav-btn" data-section="scales">
+                        <i class="fas fa-book-open"></i>
+                        <span>Scales</span>
+                    </button>
+                    <button class="nav-btn" data-section="practice">
+                        <i class="fas fa-music"></i>
+                        <span>Practice</span>
+                    </button>
+                    <button class="nav-btn" data-section="quiz">
+                        <i class="fas fa-brain"></i>
+                        <span>Quiz</span>
+                    </button>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav">
+                <button class="nav-btn mobile active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-btn mobile" data-section="notes">
+                    <i class="fas fa-music"></i>
+                    <span>Notes</span>
+                </button>
+                <button class="nav-btn mobile" data-section="tuning">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Tuning</span>
+                </button>
+                <button class="nav-btn mobile" data-section="fretboard">
+                    <i class="fas fa-guitar"></i>
+                    <span>Fretboard</span>
+                </button>
+                <button class="nav-btn mobile" data-section="scales">
+                    <i class="fas fa-book-open"></i>
+                    <span>Scales</span>
+                </button>
+                <button class="nav-btn mobile" data-section="practice">
+                    <i class="fas fa-music"></i>
+                    <span>Practice</span>
+                </button>
+                <button class="nav-btn mobile" data-section="quiz">
+                    <i class="fas fa-brain"></i>
+                    <span>Quiz</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <!-- Hero Section -->
+                <div class="hero-section">
+                    <div class="hero-background">
+                        <div class="hero-decorations">
+                            <div class="decoration guitar">🎸</div>
+                            <div class="decoration note-1">🎵</div>
+                            <div class="decoration note-2">♪</div>
+                            <div class="decoration note-3">♫</div>
+                        </div>
+                        
+                        <div class="hero-content">
+                            <div class="hero-title-container">
+                                <i class="fas fa-guitar hero-icon"></i>
+                                <h1 class="hero-title">Diatonic Scales</h1>
+                            </div>
+                            <p class="hero-subtitle">Master Guitar Theory Basics</p>
+                            <p class="hero-description">
+                                Discover the foundation of music theory through interactive learning. 
+                                Explore the seven diatonic notes, understand guitar tuning, and master 
+                                scale patterns that will unlock your musical potential.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Introduction Content -->
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>What Are Diatonic Scales?</h2>
+                        <div class="intro-paragraphs">
+                            <p>
+                                Diatonic scales are the foundation of Western music theory. They consist of seven notes 
+                                arranged in a specific pattern of whole and half steps, creating the familiar sounds 
+                                we hear in countless songs.
+                            </p>
+                            <p>
+                                On the guitar, understanding diatonic scales opens up a world of possibilities for 
+                                improvisation, songwriting, and understanding how music works. Each scale has its 
+                                own unique character and emotional quality.
+                            </p>
+                            <p>
+                                Whether you're playing major scales that sound bright and happy, or minor scales 
+                                that evoke more serious emotions, diatonic scales are your roadmap to musical expression.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="intro-benefits">
+                        <h3>Why Learn Diatonic Scales?</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon music">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Musical Foundation</h4>
+                                    <p>Build a solid understanding of how music works</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon guitar">
+                                    <i class="fas fa-guitar"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Fretboard Mastery</h4>
+                                    <p>Navigate the guitar neck with confidence</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon book">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Theory Knowledge</h4>
+                                    <p>Understand songs and communicate with other musicians</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon brain">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>Creative Expression</h4>
+                                    <p>Unlock your ability to improvise and compose</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Journey -->
+                <div class="learning-journey">
+                    <h3>Your Learning Journey</h3>
+                    <div class="journey-steps">
+                        <div class="journey-step">
+                            <div class="step-number">1</div>
+                            <h4>Learn the Notes</h4>
+                            <p>Start with the seven diatonic notes</p>
+                        </div>
+                        <div class="journey-step">
+                            <div class="step-number">2</div>
+                            <h4>Guitar Tuning</h4>
+                            <p>Understand standard guitar tuning</p>
+                        </div>
+                        <div class="journey-step">
+                            <div class="step-number">3</div>
+                            <h4>Fretboard Map</h4>
+                            <p>Explore notes across the fretboard</p>
+                        </div>
+                        <div class="journey-step">
+                            <div class="step-number">4</div>
+                            <h4>Practice Scales</h4>
+                            <p>Master scale patterns and shapes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notes" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>The Seven Diatonic Notes</h1>
+                    <p>These seven notes form the foundation of Western music. Click on each note to hear its sound 
+                    and learn both the letter name and solfege system.</p>
+                </div>
+
+                <div class="notes-grid">
+                    <!-- Interactive Note Wheel -->
+                    <div class="note-wheel-container">
+                        <h2>Interactive Note Wheel</h2>
+                        
+                        <div class="note-wheel">
+                            <div class="wheel-center">
+                                <span id="activeNoteDisplay">♪</span>
+                            </div>
+                            <div class="note-buttons" id="noteWheel">
+                                <!-- Note buttons will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <p class="wheel-instruction">Click any note to hear its sound</p>
+                    </div>
+
+                    <!-- Note Information -->
+                    <div class="note-info-container">
+                        <h2>Note System Explanation</h2>
+                        <div class="note-list" id="noteList">
+                            <!-- Note information will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Content -->
+                <div class="educational-content">
+                    <h2>Understanding the Diatonic System</h2>
+                    
+                    <div class="education-grid">
+                        <div class="education-item">
+                            <h3>Letter Names (A-G)</h3>
+                            <p>
+                                The seven letter names represent the natural notes in music. These letters repeat 
+                                in cycles: A, B, C, D, E, F, G, then back to A. This system has been used for 
+                                centuries and forms the basis of musical notation.
+                            </p>
+                            <div class="example-box">
+                                <p class="example-text">C - D - E - F - G - A - B - C</p>
+                                <p class="example-caption">The C Major Scale (no sharps or flats)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <h3>Solfege System (Do-Ti)</h3>
+                            <p>
+                                Solfege is a method of teaching pitch and sight-singing using syllables. Each note 
+                                has a specific syllable that helps you remember its sound and function within the scale. 
+                                This system is incredibly useful for ear training.
+                            </p>
+                            <div class="example-box">
+                                <p class="example-text">Do - Re - Mi - Fa - Sol - La - Ti - Do</p>
+                                <p class="example-caption">Movable Do system (Do = tonic of any key)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tuning Section -->
+        <section id="tuning" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Guitar Strings & Standard Tuning</h1>
+                    <p>Learn the standard guitar tuning and hear how each string should sound. 
+                    Click on any string to play its open note.</p>
+                </div>
+
+                <div class="tuning-grid">
+                    <!-- Interactive Guitar Diagram -->
+                    <div class="guitar-container">
+                        <h2>Interactive Guitar Tuner</h2>
+                        
+                        <div class="guitar-diagram">
+                            <div class="guitar-body">
+                                <div class="sound-hole"></div>
+                                <div class="guitar-strings" id="guitarStrings">
+                                    <!-- Guitar strings will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="guitar-instruction">Click on any string to hear its open note</p>
+                    </div>
+
+                    <!-- Tuning Information -->
+                    <div class="tuning-info-container">
+                        <h2>Standard Tuning Reference</h2>
+                        <div class="tuning-list" id="tuningList">
+                            <!-- Tuning information will be generated by JavaScript -->
+                        </div>
+                        
+                        <!-- Tuning Tips -->
+                        <div class="tuning-tips">
+                            <div class="tip-header">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h3>Tuning Tips</h3>
+                            </div>
+                            <ul>
+                                <li>Always tune up to the note (tune flat, then tighten)</li>
+                                <li>Check your tuning frequently, especially when learning</li>
+                                <li>Use a metronome when practicing to develop timing</li>
+                                <li>New strings take time to settle - retune often at first</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Content -->
+                <div class="tuning-education">
+                    <h2>Why Standard Tuning Matters</h2>
+                    
+                    <div class="tuning-benefits">
+                        <div class="tuning-benefit">
+                            <i class="fas fa-guitar"></i>
+                            <h3>Universal Standard</h3>
+                            <p>
+                                Standard tuning (E-A-D-G-B-E) is used by virtually all guitarists worldwide. 
+                                Learning this tuning allows you to play with others and follow standard tabs and chord charts.
+                            </p>
+                        </div>
+                        
+                        <div class="tuning-benefit">
+                            <i class="fas fa-volume-up"></i>
+                            <h3>Optimal Intervals</h3>
+                            <p>
+                                The intervals between strings are carefully chosen to make chord shapes and scales 
+                                comfortable to play, while providing good range across the fretboard.
+                            </p>
+                        </div>
+                        
+                        <div class="tuning-benefit">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>Foundation for Learning</h3>
+                            <p>
+                                Once you master standard tuning, you can explore alternate tunings with confidence. 
+                                But start here - it's the foundation that all other guitar knowledge builds upon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fretboard Section -->
+        <section id="fretboard" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Interactive Guitar Fretboard</h1>
+                    <p>Explore notes across the fretboard and see how different scales map to the guitar neck. 
+                    Click any fret to hear the note.</p>
+                </div>
+
+                <!-- Scale Selection -->
+                <div class="scale-selection">
+                    <label for="scaleSelect">Select Scale:</label>
+                    <select id="scaleSelect">
+                        <option value="C Major">C Major</option>
+                        <option value="G Major">G Major</option>
+                        <option value="D Major">D Major</option>
+                        <option value="A Major">A Major</option>
+                        <option value="E Major">E Major</option>
+                        <option value="F Major">F Major</option>
+                        <option value="A Minor">A Minor</option>
+                        <option value="E Minor">E Minor</option>
+                        <option value="B Minor">B Minor</option>
+                        <option value="D Minor">D Minor</option>
+                    </select>
+                    
+                    <div class="scale-type-indicator" id="scaleTypeIndicator">
+                        <span>MAJOR SCALE</span>
+                    </div>
+                </div>
+
+                <!-- Fretboard -->
+                <div class="fretboard-container">
+                    <div class="fretboard" id="fretboard">
+                        <!-- Fretboard will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Scale Information -->
+                <div class="fretboard-info-grid">
+                    <div class="scale-info">
+                        <h3>Scale Information</h3>
+                        <div class="scale-details" id="scaleDetails">
+                            <!-- Scale details will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="fretboard-usage">
+                        <h3>How to Use This Fretboard</h3>
+                        <ul>
+                            <li>Highlighted notes belong to the selected scale</li>
+                            <li>Click any fret to hear the note sound</li>
+                            <li>Blue highlights indicate major scales</li>
+                            <li>Red highlights indicate minor scales</li>
+                            <li>Position markers show common reference points</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Practice Tips -->
+                <div class="fretboard-tips">
+                    <h2>Fretboard Practice Tips</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h4>Start Simple</h4>
+                            <p>Begin with one scale pattern at a time. Master C Major before moving to other keys.</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>Practice Daily</h4>
+                            <p>Spend 5-10 minutes daily exploring different areas of the fretboard.</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>Memorize Patterns</h4>
+                            <p>Learn the visual patterns of scales. Your fingers will remember the shapes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scales Section -->
+        <section id="scales" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Scale Shapes & Patterns</h1>
+                    <p>Learn common diatonic scale patterns and shapes. These "box patterns" are essential 
+                    building blocks for guitar playing and improvisation.</p>
+                </div>
+
+                <!-- Pattern Selection -->
+                <div class="pattern-selection">
+                    <button class="pattern-btn active" data-pattern="C Major Position 1">
+                        C Major Position 1
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="pattern-btn" data-pattern="G Major Position 1">
+                        G Major Position 1
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="pattern-btn" data-pattern="A Minor Position 1">
+                        A Minor Position 1
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+
+                <div class="scales-grid">
+                    <!-- Pattern Diagram -->
+                    <div class="pattern-container">
+                        <div class="pattern-header">
+                            <h2 id="patternTitle">C Major Position 1 Pattern</h2>
+                            <button class="tabs-toggle" id="tabsToggle">
+                                <i class="fas fa-book-open"></i>
+                                <span>Show Tabs</span>
+                            </button>
+                        </div>
+                        
+                        <div class="pattern-diagram">
+                            <div class="pattern-description" id="patternDescription">
+                                Box pattern starting at 8th fret
+                            </div>
+                            
+                            <div class="pattern-fretboard" id="patternFretboard">
+                                <!-- Pattern fretboard will be generated by JavaScript -->
+                            </div>
+
+                            <!-- Tab notation -->
+                            <div class="tab-notation hidden" id="tabNotation">
+                                <h4>Tab Notation:</h4>
+                                <div class="tab-content" id="tabContent">
+                                    <!-- Tab content will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pattern Information -->
+                    <div class="pattern-info-container">
+                        <h2>Pattern Details</h2>
+                        
+                        <div class="pattern-details" id="patternDetailsInfo">
+                            <!-- Pattern details will be populated by JavaScript -->
+                        </div>
+
+                        <div class="practice-tips-box">
+                            <div class="tip-header">
+                                <i class="fas fa-info-circle"></i>
+                                <h3>Practice Tips</h3>
+                            </div>
+                            <ul>
+                                <li>Start slowly and focus on clean note execution</li>
+                                <li>Practice ascending and descending patterns</li>
+                                <li>Use a metronome to maintain steady timing</li>
+                                <li>Memorize the fingering pattern before adding speed</li>
+                                <li>Practice connecting different position patterns</li>
+                            </ul>
+                        </div>
+
+                        <div class="fingering-suggestion">
+                            <h3>Fingering Suggestion</h3>
+                            <div class="fingering-grid">
+                                <div class="finger-assignment">
+                                    <span class="finger-label">Index Finger:</span>
+                                    <span>1st fret in pattern</span>
+                                </div>
+                                <div class="finger-assignment">
+                                    <span class="finger-label">Middle Finger:</span>
+                                    <span>2nd fret in pattern</span>
+                                </div>
+                                <div class="finger-assignment">
+                                    <span class="finger-label">Ring Finger:</span>
+                                    <span>3rd fret in pattern</span>
+                                </div>
+                                <div class="finger-assignment">
+                                    <span class="finger-label">Pinky Finger:</span>
+                                    <span>4th fret in pattern</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Progression -->
+                <div class="learning-progression">
+                    <h2>Scale Learning Progression</h2>
+                    <div class="progression-steps">
+                        <div class="progression-step">
+                            <div class="step-number">1</div>
+                            <h4>Learn Pattern 1</h4>
+                            <p>Master one box pattern completely</p>
+                        </div>
+                        <div class="progression-step">
+                            <div class="step-number">2</div>
+                            <h4>Practice Daily</h4>
+                            <p>Build muscle memory with repetition</p>
+                        </div>
+                        <div class="progression-step">
+                            <div class="step-number">3</div>
+                            <h4>Add Rhythm</h4>
+                            <p>Practice with different rhythmic patterns</p>
+                        </div>
+                        <div class="progression-step">
+                            <div class="step-number">4</div>
+                            <h4>Connect Patterns</h4>
+                            <p>Link patterns across the fretboard</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Practical Application</h1>
+                    <p>Apply your scale knowledge with practical exercises, riffs, and practice routines. 
+                    Build real musical skills through structured practice.</p>
+                </div>
+
+                <!-- Practice Tools -->
+                <div class="practice-tools">
+                    <!-- Metronome -->
+                    <div class="tool-card">
+                        <h2>
+                            <i class="fas fa-clock"></i>
+                            Practice Metronome
+                        </h2>
+                        <div class="metronome-controls">
+                            <div class="bpm-control">
+                                <label for="bpmSlider">Tempo (BPM)</label>
+                                <div class="bpm-slider-container">
+                                    <input type="range" id="bpmSlider" min="60" max="200" value="80">
+                                    <span id="bpmDisplay">80</span>
+                                </div>
+                            </div>
+                            <button class="metronome-btn" id="metronomeBtn">
+                                <i class="fas fa-play"></i>
+                                <span>Start Metronome</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Practice Goals -->
+                    <div class="tool-card">
+                        <h2>
+                            <i class="fas fa-target"></i>
+                            Practice Goals
+                        </h2>
+                        <div class="goals-list">
+                            <div class="goal-item">
+                                <input type="checkbox" id="goal1">
+                                <label for="goal1">Practice scales for 10 minutes daily</label>
+                            </div>
+                            <div class="goal-item">
+                                <input type="checkbox" id="goal2">
+                                <label for="goal2">Master one new pattern per week</label>
+                            </div>
+                            <div class="goal-item">
+                                <input type="checkbox" id="goal3">
+                                <label for="goal3">Play with metronome at different tempos</label>
+                            </div>
+                            <div class="goal-item">
+                                <input type="checkbox" id="goal4">
+                                <label for="goal4">Record yourself to track progress</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise Library -->
+                <div class="exercise-library">
+                    <h2>Practice Exercises</h2>
+                    
+                    <div class="exercises-container" id="exercisesContainer">
+                        <!-- Exercises will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Practice Schedule -->
+                <div class="practice-schedule">
+                    <h2>Weekly Practice Schedule</h2>
+                    <div class="schedule-grid">
+                        <div class="schedule-day">
+                            <h3>Mon</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <h3>Tue</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <h3>Wed</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <h3>Thu</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <h3>Fri</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <h3>Sat</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                        <div class="schedule-day">
+                            <h3>Sun</h3>
+                            <div class="day-activities">
+                                <div>Scales: 15min</div>
+                                <div>Chords: 10min</div>
+                                <div>Practice: 20min</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="schedule-note">
+                        Consistency is key! Even 15 minutes of daily practice will yield better results than lengthy, infrequent sessions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <!-- Quiz Start Screen -->
+                <div class="quiz-start" id="quizStart">
+                    <div class="quiz-intro">
+                        <div class="quiz-header">
+                            <i class="fas fa-brain"></i>
+                            <h1>Guitar Theory Quiz</h1>
+                        </div>
+                        
+                        <p class="quiz-description">
+                            Test your knowledge of diatonic scales, guitar tuning, and fretboard theory. 
+                            You have 5 minutes to complete 8 questions.
+                        </p>
+
+                        <div class="quiz-stats">
+                            <div class="quiz-stat">
+                                <i class="fas fa-target"></i>
+                                <h3>Questions</h3>
+                                <p>8</p>
+                            </div>
+                            <div class="quiz-stat">
+                                <i class="fas fa-brain"></i>
+                                <h3>Time Limit</h3>
+                                <p>5 min</p>
+                            </div>
+                            <div class="quiz-stat">
+                                <i class="fas fa-trophy"></i>
+                                <h3>Passing Score</h3>
+                                <p>70%</p>
+                            </div>
+                        </div>
+
+                        <button class="start-quiz-btn" id="startQuizBtn">Start Quiz</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Questions -->
+                <div class="quiz-questions hidden" id="quizQuestions">
+                    <!-- Quiz Header -->
+                    <div class="quiz-progress-header">
+                        <div class="quiz-info">
+                            <i class="fas fa-brain"></i>
+                            <span id="questionCounter">Question 1 of 8</span>
+                        </div>
+                        <div class="quiz-timer">
+                            <i class="fas fa-target"></i>
+                            <span id="timeDisplay">5:00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <!-- Question -->
+                    <div class="question-container">
+                        <h2 id="questionText">Question will appear here</h2>
+
+                        <!-- Answer Options -->
+                        <div class="answer-options" id="answerOptions">
+                            <!-- Options will be generated by JavaScript -->
+                        </div>
+
+                        <!-- Next Button -->
+                        <div class="question-actions">
+                            <button class="next-btn disabled" id="nextBtn">Next Question</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Results -->
+                <div class="quiz-results hidden" id="quizResults">
+                    <!-- Results will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-guitar"></i>
+                    <span>Diatonic Scales: Guitar Theory Basics</span>
+                </div>
+                <p class="footer-description">
+                    Educational project for guitar theory and diatonic scale learning
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
