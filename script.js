@@ -336,7 +336,7 @@ function createNoteWheel() {
 function handleNoteClick(note, button) {
     const frequency = NOTE_FREQUENCIES[note];
     if (frequency) {
-        playNote(frequency, 1);
+        playAcousticGuitar(frequency, 1);
         
         // Update active note display
         document.getElementById('activeNoteDisplay').textContent = note;
@@ -385,7 +385,7 @@ function createNoteList() {
         item.addEventListener('click', () => {
             const frequency = NOTE_FREQUENCIES[note];
             if (frequency) {
-                playNote(frequency, 1);
+                playAcousticGuitar(frequency, 1);
                 item.classList.add('active');
                 document.getElementById('activeNoteDisplay').textContent = note;
                 
@@ -429,7 +429,7 @@ function createGuitarStrings() {
 }
 
 function handleStringClick(stringIndex, frequency, element) {
-    playNote(frequency, 2);
+    playGuitarString(frequency, 2);
     
     // Update active string
     document.querySelectorAll('.guitar-string').forEach(str => str.classList.remove('active'));
@@ -579,7 +579,7 @@ function handleFretClick(stringIndex, fret, note) {
     if (frequency) {
         // Adjust frequency for octave based on string
         const octaveMultiplier = Math.pow(2, Math.floor(stringIndex / 2));
-        playNote(frequency * octaveMultiplier, 1);
+        playAcousticGuitar(frequency * octaveMultiplier, 1);
     }
 }
 
