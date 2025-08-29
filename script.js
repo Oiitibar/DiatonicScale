@@ -909,7 +909,7 @@ function playExercise(index) {
     const frequencies = [261.63, 293.66, 329.63, 349.23]; // C, D, E, F
     frequencies.forEach((freq, i) => {
         setTimeout(() => {
-            playAcousticGuitar(freq, 0.5);
+            playNote(freq, 0.5);
         }, i * 500);
     });
     
