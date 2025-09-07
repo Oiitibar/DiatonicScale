@@ -2517,37 +2517,6 @@ body.dark-mode .quiz-header i {
     margin-right: auto;
 }
 
-/* Quiz Settings */
-.quiz-settings {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-}
-
-.setting-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.setting-group label {
-    font-weight: 600;
-    color: white;
-}
-
-.setting-group select {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    background: white;
-    color: #333;
-    font-weight: 500;
-    min-width: 200px;
-}
-
 .quiz-stats {
     display: grid;
     gap: 1.5rem;
@@ -2857,23 +2826,6 @@ body.dark-mode .fretboard-option:hover {
     font-size: 1.25rem;
 }
 
-/* New Best Score Badge */
-.new-best-badge {
-    background: linear-gradient(45deg, #ffd700, #ffed4e);
-    color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    animation: bounce 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
 .results-summary {
     display: grid;
     gap: 1.5rem;
@@ -2913,14 +2865,6 @@ body.dark-mode .fretboard-option:hover {
     margin-bottom: 2rem;
 }
 
-/* Results Actions */
-.results-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .retry-btn {
     display: flex;
     align-items: center;
@@ -2941,26 +2885,6 @@ body.dark-mode .fretboard-option:hover {
 .retry-btn:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
-}
-
-.new-quiz-btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(45deg, #4f46e5, #7c3aed);
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.new-quiz-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
 }
 
 /* Question Review */
@@ -3159,8 +3083,8 @@ body.dark-mode .footer-description {
     color: #9ca3af;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 767px) {
     .container {
         padding: 0 0.5rem;
     }
