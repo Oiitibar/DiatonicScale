@@ -1741,3 +1741,4 @@ document.addEventListener('DOMContentLoaded', () => {
 window.playExercise = playExercise;
 window.resetExercise = resetExercise;
 window.resetQuiz = resetQuiz;
+window.startNewQuiz = startNewQuiz;
