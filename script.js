@@ -179,6 +179,509 @@ const QUIZ_QUESTIONS = [
         question: 'What note is on the 5th fret of the low E string (6th string)?',
         correctAnswer: 'A',
         explanation: 'The low E string open is E. The 5th fret of the E string produces an A note.'
+    },
+    {
+        id: 9,
+        type: 'multiple-choice',
+        question: 'What interval is between C and E?',
+        options: ['Minor third', 'Major third', 'Perfect fourth', 'Perfect fifth'],
+        correctAnswer: 'Major third',
+        explanation: 'C to E is a major third interval, consisting of 4 semitones.'
+    },
+    {
+        id: 10,
+        type: 'true-false',
+        question: 'The G major scale has one sharp.',
+        correctAnswer: 'True',
+        explanation: 'G major scale has one sharp: F#. The notes are G-A-B-C-D-E-F#.'
+    },
+    {
+        id: 11,
+        type: 'multiple-choice',
+        question: 'Which note is the relative minor of C major?',
+        options: ['A', 'E', 'F', 'D'],
+        correctAnswer: 'A',
+        explanation: 'A minor is the relative minor of C major. They share the same notes but start from different roots.'
+    },
+    {
+        id: 12,
+        type: 'fretboard-identify',
+        question: 'What note is on the 2nd fret of the D string (4th string)?',
+        correctAnswer: 'E',
+        explanation: 'The D string open is D. The 2nd fret produces an E note.'
+    },
+    {
+        id: 13,
+        type: 'multiple-choice',
+        question: 'How many semitones are in a perfect fifth?',
+        options: ['5', '6', '7', '8'],
+        correctAnswer: '7',
+        explanation: 'A perfect fifth contains 7 semitones. For example, C to G is 7 semitones.'
+    },
+    {
+        id: 14,
+        type: 'true-false',
+        question: 'The pentatonic scale has 5 notes.',
+        correctAnswer: 'True',
+        explanation: 'Pentatonic means "five tones" - the pentatonic scale contains exactly 5 notes.'
+    },
+    {
+        id: 15,
+        type: 'multiple-choice',
+        question: 'What is the first note of the D major scale?',
+        options: ['C', 'D', 'E', 'F#'],
+        correctAnswer: 'D',
+        explanation: 'The D major scale starts with D: D-E-F#-G-A-B-C#.'
+    },
+    {
+        id: 16,
+        type: 'fretboard-identify',
+        question: 'What note is on the 7th fret of the low E string (6th string)?',
+        correctAnswer: 'B',
+        explanation: 'Starting from E (open), the 7th fret produces a B note.'
+    },
+    {
+        id: 17,
+        type: 'multiple-choice',
+        question: 'Which scale degree is called the "dominant"?',
+        options: ['3rd', '4th', '5th', '7th'],
+        correctAnswer: '5th',
+        explanation: 'The 5th degree of the scale is called the dominant. In C major, G is the dominant.'
+    },
+    {
+        id: 18,
+        type: 'true-false',
+        question: 'All major scales follow the same pattern of whole and half steps.',
+        correctAnswer: 'True',
+        explanation: 'All major scales follow the pattern: W-W-H-W-W-W-H (where W=whole step, H=half step).'
+    },
+    {
+        id: 19,
+        type: 'multiple-choice',
+        question: 'How many sharps does the E major scale have?',
+        options: ['2', '3', '4', '5'],
+        correctAnswer: '4',
+        explanation: 'E major has 4 sharps: F#, C#, G#, and D#.'
+    },
+    {
+        id: 20,
+        type: 'fretboard-identify',
+        question: 'What note is on the 3rd fret of the G string (3rd string)?',
+        correctAnswer: 'B',
+        explanation: 'The G string open is G. The 3rd fret produces a B note (G-G#-A-B).'
+    },
+    {
+        id: 21,
+        type: 'multiple-choice',
+        question: 'What is the solfege name for the 3rd degree of a major scale?',
+        options: ['Re', 'Mi', 'Fa', 'Sol'],
+        correctAnswer: 'Mi',
+        explanation: 'The 3rd degree of the major scale is "Mi" in solfege.'
+    },
+    {
+        id: 22,
+        type: 'true-false',
+        question: 'The circle of fifths shows the relationship between different keys.',
+        correctAnswer: 'True',
+        explanation: 'The circle of fifths is a visual representation showing the relationships between the 12 tones and their key signatures.'
+    },
+    {
+        id: 23,
+        type: 'multiple-choice',
+        question: 'Which interval is known as the "tritone"?',
+        options: ['Minor third', 'Perfect fourth', 'Diminished fifth', 'Perfect fifth'],
+        correctAnswer: 'Diminished fifth',
+        explanation: 'The tritone is a diminished fifth (or augmented fourth), spanning exactly 6 semitones.'
+    },
+    {
+        id: 24,
+        type: 'fretboard-identify',
+        question: 'What note is on the 5th fret of the B string (2nd string)?',
+        correctAnswer: 'E',
+        explanation: 'The B string open is B. The 5th fret produces an E note.'
+    },
+    {
+        id: 25,
+        type: 'multiple-choice',
+        question: 'How many flats does the F major scale have?',
+        options: ['0', '1', '2', '3'],
+        correctAnswer: '1',
+        explanation: 'F major has one flat: Bb. The notes are F-G-A-Bb-C-D-E.'
+    },
+    {
+        id: 26,
+        type: 'true-false',
+        question: 'A capo changes the pitch of all strings equally.',
+        correctAnswer: 'True',
+        explanation: 'A capo raises the pitch of all strings by the same amount, effectively transposing the guitar.'
+    },
+    {
+        id: 27,
+        type: 'multiple-choice',
+        question: 'What is the relative major of A minor?',
+        options: ['C major', 'E major', 'F major', 'G major'],
+        correctAnswer: 'C major',
+        explanation: 'C major is the relative major of A minor. They share the same key signature (no sharps or flats).'
+    },
+    {
+        id: 28,
+        type: 'fretboard-identify',
+        question: 'What note is on the 1st fret of the high E string (1st string)?',
+        correctAnswer: 'F',
+        explanation: 'The high E string open is E. The 1st fret produces an F note.'
+    },
+    {
+        id: 29,
+        type: 'multiple-choice',
+        question: 'Which mode starts on the 2nd degree of the major scale?',
+        options: ['Dorian', 'Phrygian', 'Lydian', 'Mixolydian'],
+        correctAnswer: 'Dorian',
+        explanation: 'Dorian mode starts on the 2nd degree of the major scale. D Dorian uses the same notes as C major.'
+    },
+    {
+        id: 30,
+        type: 'true-false',
+        question: 'The blues scale is a variation of the pentatonic scale.',
+        correctAnswer: 'True',
+        explanation: 'The blues scale is the minor pentatonic scale with an added "blue note" (flattened fifth).'
+    },
+    {
+        id: 31,
+        type: 'multiple-choice',
+        question: 'What chord is built on the 5th degree of C major?',
+        options: ['F major', 'G major', 'A minor', 'D minor'],
+        correctAnswer: 'G major',
+        explanation: 'The 5th degree of C major is G, so the chord built there is G major (G-B-D).'
+    },
+    {
+        id: 32,
+        type: 'fretboard-identify',
+        question: 'What note is on the 4th fret of the A string (5th string)?',
+        correctAnswer: 'D',
+        explanation: 'The A string open is A. The 4th fret produces a D note (A-A#-B-C-D).'
+    },
+    {
+        id: 33,
+        type: 'multiple-choice',
+        question: 'How many notes are in the chromatic scale?',
+        options: ['7', '8', '10', '12'],
+        correctAnswer: '12',
+        explanation: 'The chromatic scale contains all 12 semitones within an octave.'
+    },
+    {
+        id: 34,
+        type: 'true-false',
+        question: 'Tablature shows which frets to press on which strings.',
+        correctAnswer: 'True',
+        explanation: 'Guitar tablature (tabs) shows fret numbers on string lines, indicating exactly where to place your fingers.'
+    },
+    {
+        id: 35,
+        type: 'multiple-choice',
+        question: 'What is the leading tone in the key of G major?',
+        options: ['E', 'F', 'F#', 'G'],
+        correctAnswer: 'F#',
+        explanation: 'The leading tone is the 7th degree of the scale. In G major, F# is the leading tone.'
+    },
+    {
+        id: 36,
+        type: 'fretboard-identify',
+        question: 'What note is on the 2nd fret of the G string (3rd string)?',
+        correctAnswer: 'A',
+        explanation: 'The G string open is G. The 2nd fret produces an A note (G-G#-A).'
+    },
+    {
+        id: 37,
+        type: 'multiple-choice',
+        question: 'Which scale has the pattern W-H-W-W-H-W-W?',
+        options: ['Major scale', 'Natural minor scale', 'Harmonic minor scale', 'Melodic minor scale'],
+        correctAnswer: 'Natural minor scale',
+        explanation: 'The natural minor scale follows the pattern W-H-W-W-H-W-W (whole and half steps).'
+    },
+    {
+        id: 38,
+        type: 'true-false',
+        question: 'Barre chords use one finger to press multiple strings.',
+        correctAnswer: 'True',
+        explanation: 'Barre chords involve using one finger (usually the index) to press across multiple strings at the same fret.'
+    },
+    {
+        id: 39,
+        type: 'multiple-choice',
+        question: 'What interval is between the root and the fifth in a major chord?',
+        options: ['Major third', 'Minor third', 'Perfect fourth', 'Perfect fifth'],
+        correctAnswer: 'Perfect fifth',
+        explanation: 'In a major chord, the interval between the root and fifth is a perfect fifth (7 semitones).'
+    },
+    {
+        id: 40,
+        type: 'fretboard-identify',
+        question: 'What note is on the 3rd fret of the B string (2nd string)?',
+        correctAnswer: 'D',
+        explanation: 'The B string open is B. The 3rd fret produces a D note (B-C-C#-D).'
+    },
+    {
+        id: 41,
+        type: 'multiple-choice',
+        question: 'Which chord progression is known as the "vi-IV-I-V" in C major?',
+        options: ['Am-F-C-G', 'Dm-G-C-Am', 'F-G-Am-C', 'C-Am-F-G'],
+        correctAnswer: 'Am-F-C-G',
+        explanation: 'In C major: vi=Am, IV=F, I=C, V=G. This progression is Am-F-C-G.'
+    },
+    {
+        id: 42,
+        type: 'true-false',
+        question: 'Drop D tuning lowers only the 6th string by one whole step.',
+        correctAnswer: 'True',
+        explanation: 'Drop D tuning changes the low E string (6th string) to D, lowering it by one whole step.'
+    },
+    {
+        id: 43,
+        type: 'multiple-choice',
+        question: 'What is the subdominant chord in the key of A major?',
+        options: ['A major', 'D major', 'E major', 'F# minor'],
+        correctAnswer: 'D major',
+        explanation: 'The subdominant is the IV chord. In A major, the IV chord is D major.'
+    },
+    {
+        id: 44,
+        type: 'fretboard-identify',
+        question: 'What note is on the 5th fret of the G string (3rd string)?',
+        correctAnswer: 'C',
+        explanation: 'The G string open is G. The 5th fret produces a C note.'
+    },
+    {
+        id: 45,
+        type: 'multiple-choice',
+        question: 'How many semitones are in a major third?',
+        options: ['2', '3', '4', '5'],
+        correctAnswer: '4',
+        explanation: 'A major third contains 4 semitones. For example, C to E is 4 semitones.'
+    },
+    {
+        id: 46,
+        type: 'true-false',
+        question: 'The Nashville Number System uses numbers instead of chord names.',
+        correctAnswer: 'True',
+        explanation: 'The Nashville Number System represents chords with numbers based on scale degrees, making transposition easier.'
+    },
+    {
+        id: 47,
+        type: 'multiple-choice',
+        question: 'Which note is enharmonically equivalent to F#?',
+        options: ['E#', 'Gb', 'G#', 'Ab'],
+        correctAnswer: 'Gb',
+        explanation: 'F# and Gb are enharmonically equivalent - they represent the same pitch with different names.'
+    },
+    {
+        id: 48,
+        type: 'fretboard-identify',
+        question: 'What note is on the 7th fret of the A string (5th string)?',
+        correctAnswer: 'E',
+        explanation: 'The A string open is A. The 7th fret produces an E note.'
+    },
+    {
+        id: 49,
+        type: 'multiple-choice',
+        question: 'What type of chord is built on the 7th degree of a major scale?',
+        options: ['Major', 'Minor', 'Diminished', 'Augmented'],
+        correctAnswer: 'Diminished',
+        explanation: 'The chord built on the 7th degree of a major scale is diminished. In C major, B diminished.'
+    },
+    {
+        id: 50,
+        type: 'true-false',
+        question: 'Power chords contain only the root and fifth.',
+        correctAnswer: 'True',
+        explanation: 'Power chords (like C5) contain only the root and fifth, omitting the third that determines major/minor quality.'
+    },
+    {
+        id: 51,
+        type: 'multiple-choice',
+        question: 'Which scale degree is called the "mediant"?',
+        options: ['2nd', '3rd', '6th', '7th'],
+        correctAnswer: '3rd',
+        explanation: 'The 3rd degree of the scale is called the mediant because it mediates between the tonic and dominant.'
+    },
+    {
+        id: 52,
+        type: 'fretboard-identify',
+        question: 'What note is on the 9th fret of the low E string (6th string)?',
+        correctAnswer: 'D',
+        explanation: 'The low E string open is E. The 9th fret produces a D note.'
+    },
+    {
+        id: 53,
+        type: 'multiple-choice',
+        question: 'How many sharps does the A major scale have?',
+        options: ['1', '2', '3', '4'],
+        correctAnswer: '3',
+        explanation: 'A major has 3 sharps: F#, C#, and G#.'
+    },
+    {
+        id: 54,
+        type: 'true-false',
+        question: 'Alternate picking involves alternating between downstrokes and upstrokes.',
+        correctAnswer: 'True',
+        explanation: 'Alternate picking is a guitar technique that alternates between downward and upward pick strokes for efficiency.'
+    },
+    {
+        id: 55,
+        type: 'multiple-choice',
+        question: 'What is the tonic chord in the key of E minor?',
+        options: ['E minor', 'G major', 'A minor', 'B major'],
+        correctAnswer: 'E minor',
+        explanation: 'The tonic chord is built on the first degree of the scale. In E minor, the tonic is E minor.'
+    },
+    {
+        id: 56,
+        type: 'fretboard-identify',
+        question: 'What note is on the 4th fret of the D string (4th string)?',
+        correctAnswer: 'F#',
+        explanation: 'The D string open is D. The 4th fret produces an F# note (D-D#-E-F-F#).'
+    },
+    {
+        id: 57,
+        type: 'multiple-choice',
+        question: 'Which mode has a flattened 7th degree?',
+        options: ['Ionian', 'Dorian', 'Mixolydian', 'Lydian'],
+        correctAnswer: 'Mixolydian',
+        explanation: 'Mixolydian mode has a flattened 7th degree compared to the major scale (Ionian mode).'
+    },
+    {
+        id: 58,
+        type: 'true-false',
+        question: 'A suspended chord replaces the third with either the second or fourth.',
+        correctAnswer: 'True',
+        explanation: 'Suspended chords (sus2 or sus4) replace the third with either the second or fourth scale degree.'
+    },
+    {
+        id: 59,
+        type: 'multiple-choice',
+        question: 'What interval is between C and F?',
+        options: ['Major third', 'Perfect fourth', 'Perfect fifth', 'Minor sixth'],
+        correctAnswer: 'Perfect fourth',
+        explanation: 'C to F is a perfect fourth interval, consisting of 5 semitones.'
+    },
+    {
+        id: 60,
+        type: 'fretboard-identify',
+        question: 'What note is on the 6th fret of the B string (2nd string)?',
+        correctAnswer: 'F#',
+        explanation: 'The B string open is B. The 6th fret produces an F# note.'
+    },
+    {
+        id: 61,
+        type: 'multiple-choice',
+        question: 'How many flats does the Bb major scale have?',
+        options: ['1', '2', '3', '4'],
+        correctAnswer: '2',
+        explanation: 'Bb major has 2 flats: Bb and Eb.'
+    },
+    {
+        id: 62,
+        type: 'true-false',
+        question: 'Fingerpicking uses individual fingers to pluck strings instead of a pick.',
+        correctAnswer: 'True',
+        explanation: 'Fingerpicking (or fingerstyle) uses the thumb and fingers to pluck individual strings rather than using a pick.'
+    },
+    {
+        id: 63,
+        type: 'multiple-choice',
+        question: 'Which chord is the dominant 7th in the key of C major?',
+        options: ['C7', 'F7', 'G7', 'Am7'],
+        correctAnswer: 'G7',
+        explanation: 'The dominant 7th chord is built on the 5th degree. In C major, G7 is the dominant 7th chord.'
+    },
+    {
+        id: 64,
+        type: 'fretboard-identify',
+        question: 'What note is on the 8th fret of the G string (3rd string)?',
+        correctAnswer: 'D#',
+        explanation: 'The G string open is G. The 8th fret produces a D# note.'
+    },
+    {
+        id: 65,
+        type: 'multiple-choice',
+        question: 'What is the supertonic in the key of F major?',
+        options: ['F', 'G', 'A', 'Bb'],
+        correctAnswer: 'G',
+        explanation: 'The supertonic is the 2nd degree of the scale. In F major, G is the supertonic.'
+    },
+    {
+        id: 66,
+        type: 'true-false',
+        question: 'Hammer-ons and pull-offs are legato techniques.',
+        correctAnswer: 'True',
+        explanation: 'Hammer-ons and pull-offs create smooth, connected (legato) transitions between notes without picking each one.'
+    },
+    {
+        id: 67,
+        type: 'multiple-choice',
+        question: 'Which scale has both natural and harmonic minor characteristics?',
+        options: ['Dorian', 'Phrygian', 'Melodic minor', 'Locrian'],
+        correctAnswer: 'Melodic minor',
+        explanation: 'Melodic minor scale raises the 6th and 7th degrees when ascending, combining natural and harmonic minor elements.'
+    },
+    {
+        id: 68,
+        type: 'fretboard-identify',
+        question: 'What note is on the 10th fret of the A string (5th string)?',
+        correctAnswer: 'G',
+        explanation: 'The A string open is A. The 10th fret produces a G note.'
+    },
+    {
+        id: 69,
+        type: 'multiple-choice',
+        question: 'How many semitones are in a minor seventh?',
+        options: ['9', '10', '11', '12'],
+        correctAnswer: '10',
+        explanation: 'A minor seventh contains 10 semitones. For example, C to Bb is 10 semitones.'
+    },
+    {
+        id: 70,
+        type: 'true-false',
+        question: 'The CAGED system uses five basic chord shapes.',
+        correctAnswer: 'True',
+        explanation: 'The CAGED system uses five chord shapes (C, A, G, E, D) that can be moved around the fretboard.'
+    },
+    {
+        id: 71,
+        type: 'multiple-choice',
+        question: 'What chord tone creates the major or minor quality?',
+        options: ['Root', 'Third', 'Fifth', 'Seventh'],
+        correctAnswer: 'Third',
+        explanation: 'The third determines whether a chord is major or minor. Major third = major chord, minor third = minor chord.'
+    },
+    {
+        id: 72,
+        type: 'fretboard-identify',
+        question: 'What note is on the 12th fret of any string?',
+        correctAnswer: 'Same as open',
+        explanation: 'The 12th fret produces the same note as the open string, but one octave higher.'
+    },
+    {
+        id: 73,
+        type: 'multiple-choice',
+        question: 'Which time signature has 3 quarter note beats per measure?',
+        options: ['2/4', '3/4', '4/4', '6/8'],
+        correctAnswer: '3/4',
+        explanation: '3/4 time signature has 3 quarter note beats per measure, commonly used in waltzes.'
+    },
+    {
+        id: 74,
+        type: 'true-false',
+        question: 'Vibrato adds a slight pitch variation to sustain notes.',
+        correctAnswer: 'True',
+        explanation: 'Vibrato is a technique that adds a slight, rapid variation in pitch to make sustained notes more expressive.'
+    },
+    {
+        id: 75,
+        type: 'multiple-choice',
+        question: 'What is the most common strumming pattern in 4/4 time?',
+        options: ['Down-Up-Down-Up', 'Down-Down-Up-Down-Up', 'Down-Up-Up-Down-Up', 'Down-Down-Down-Down'],
+        correctAnswer: 'Down-Down-Up-Down-Up',
+        explanation: 'The most common strumming pattern in 4/4 is Down-Down-Up-Down-Up, emphasizing beats 1 and 3.'
     }
 ];
 
@@ -197,13 +700,14 @@ let metronomeInterval = null;
 
 // Quiz variables
 let quizStarted = false;
+let selectedQuestionCount = 10;
+let shuffledQuestions = [];
 let currentQuestion = 0;
 let selectedAnswer = null;
 let userAnswers = [];
 let showResults = false;
-let timeLeft = 300; // 5 minutes
+let timeLeft = 0;
 let timerActive = false;
-let quizTimer = null;
 
 // ===== AUDIO FUNCTIONS =====
 function initAudioContext() {
