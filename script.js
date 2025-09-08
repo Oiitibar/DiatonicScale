@@ -1513,9 +1513,10 @@ function resetQuiz() {
     currentQuestion = 0;
     selectedAnswer = null;
     userAnswers = [];
+    selectedQuestions = [];
     showResults = false;
     timerActive = false;
-    timeLeft = 300;
+    timeLeft = 450;
     
     if (quizTimer) {
         clearInterval(quizTimer);
