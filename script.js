@@ -179,6 +179,321 @@ const QUIZ_QUESTIONS = [
         question: 'What note is on the 5th fret of the low E string (6th string)?',
         correctAnswer: 'A',
         explanation: 'The low E string open is E. The 5th fret of the E string produces an A note.'
+    },
+    {
+        id: 9,
+        type: 'multiple-choice',
+        question: 'What is the interval between C and E?',
+        options: ['Minor third', 'Major third', 'Perfect fourth', 'Perfect fifth'],
+        correctAnswer: 'Major third',
+        explanation: 'C to E is a major third interval, consisting of 4 semitones.'
+    },
+    {
+        id: 10,
+        type: 'true-false',
+        question: 'The G major scale has one sharp.',
+        correctAnswer: 'True',
+        explanation: 'G major scale has one sharp: F#. The notes are G-A-B-C-D-E-F#.'
+    },
+    {
+        id: 11,
+        type: 'multiple-choice',
+        question: 'Which note is the relative minor of C major?',
+        options: ['A', 'E', 'F', 'D'],
+        correctAnswer: 'A',
+        explanation: 'A minor is the relative minor of C major. They share the same notes but start from different root notes.'
+    },
+    {
+        id: 12,
+        type: 'fretboard-identify',
+        question: 'What note is on the 2nd fret of the D string (4th string)?',
+        correctAnswer: 'E',
+        explanation: 'The D string open is D. The 2nd fret produces E (D# on 1st fret, E on 2nd fret).'
+    },
+    {
+        id: 13,
+        type: 'multiple-choice',
+        question: 'How many sharps does the D major scale have?',
+        options: ['1', '2', '3', '4'],
+        correctAnswer: '2',
+        explanation: 'D major has 2 sharps: F# and C#. The notes are D-E-F#-G-A-B-C#.'
+    },
+    {
+        id: 14,
+        type: 'true-false',
+        question: 'The 12th fret produces the same note as the open string, one octave higher.',
+        correctAnswer: 'True',
+        explanation: 'Yes! The 12th fret is exactly one octave higher than the open string note.'
+    },
+    {
+        id: 15,
+        type: 'multiple-choice',
+        question: 'What is the first note in the solfege system?',
+        options: ['Do', 'Re', 'Mi', 'Fa'],
+        correctAnswer: 'Do',
+        explanation: 'Do is the first note in the solfege system, representing the tonic or root note of the scale.'
+    },
+    {
+        id: 16,
+        type: 'fretboard-identify',
+        question: 'What note is on the 7th fret of the low E string (6th string)?',
+        correctAnswer: 'B',
+        explanation: 'Starting from E: F(1st), F#(2nd), G(3rd), G#(4th), A(5th), A#(6th), B(7th).'
+    },
+    {
+        id: 17,
+        type: 'multiple-choice',
+        question: 'Which scale degree is called the "dominant"?',
+        options: ['3rd', '4th', '5th', '7th'],
+        correctAnswer: '5th',
+        explanation: 'The 5th degree of the scale is called the dominant. In C major, this would be G.'
+    },
+    {
+        id: 18,
+        type: 'true-false',
+        question: 'All major scales follow the same pattern of whole and half steps.',
+        correctAnswer: 'True',
+        explanation: 'Yes! All major scales follow the pattern: W-W-H-W-W-W-H (where W=whole step, H=half step).'
+    },
+    {
+        id: 19,
+        type: 'multiple-choice',
+        question: 'What is the interval between the 1st and 5th degrees of a major scale?',
+        options: ['Major third', 'Perfect fourth', 'Perfect fifth', 'Major sixth'],
+        correctAnswer: 'Perfect fifth',
+        explanation: 'The interval from the root to the 5th degree is a perfect fifth (7 semitones).'
+    },
+    {
+        id: 20,
+        type: 'fretboard-identify',
+        question: 'What note is on the 3rd fret of the G string (3rd string)?',
+        correctAnswer: 'A#',
+        explanation: 'Starting from G: G#(1st), A(2nd), A#(3rd). A# can also be called Bb.'
+    },
+    {
+        id: 21,
+        type: 'multiple-choice',
+        question: 'How many flats does the F major scale have?',
+        options: ['0', '1', '2', '3'],
+        correctAnswer: '1',
+        explanation: 'F major has 1 flat: Bb. The notes are F-G-A-Bb-C-D-E.'
+    },
+    {
+        id: 22,
+        type: 'true-false',
+        question: 'The pentatonic scale has 5 notes.',
+        correctAnswer: 'True',
+        explanation: 'Yes! "Penta" means five, so the pentatonic scale contains 5 notes.'
+    },
+    {
+        id: 23,
+        type: 'multiple-choice',
+        question: 'Which string is tuned to B in standard tuning?',
+        options: ['1st string', '2nd string', '3rd string', '4th string'],
+        correctAnswer: '2nd string',
+        explanation: 'The 2nd string (B string) is tuned to B in standard guitar tuning.'
+    },
+    {
+        id: 24,
+        type: 'fretboard-identify',
+        question: 'What note is on the 5th fret of the A string (5th string)?',
+        correctAnswer: 'D',
+        explanation: 'The 5th fret of the A string produces D. This is the same as the open D string (4th string).'
+    },
+    {
+        id: 25,
+        type: 'multiple-choice',
+        question: 'What is the solfege name for the 3rd degree of a major scale?',
+        options: ['Re', 'Mi', 'Fa', 'Sol'],
+        correctAnswer: 'Mi',
+        explanation: 'Mi is the solfege name for the 3rd degree of the major scale.'
+    },
+    {
+        id: 26,
+        type: 'true-false',
+        question: 'A capo changes the pitch of all strings equally.',
+        correctAnswer: 'True',
+        explanation: 'Yes! A capo raises the pitch of all strings by the same amount, effectively moving the nut.'
+    },
+    {
+        id: 27,
+        type: 'multiple-choice',
+        question: 'Which note comes after G in the musical alphabet?',
+        options: ['H', 'A', 'F', 'B'],
+        correctAnswer: 'A',
+        explanation: 'The musical alphabet goes A-B-C-D-E-F-G, then repeats. So after G comes A.'
+    },
+    {
+        id: 28,
+        type: 'fretboard-identify',
+        question: 'What note is on the 1st fret of the B string (2nd string)?',
+        correctAnswer: 'C',
+        explanation: 'The B string open is B. The 1st fret produces C.'
+    },
+    {
+        id: 29,
+        type: 'multiple-choice',
+        question: 'How many semitones are in a perfect fifth?',
+        options: ['5', '6', '7', '8'],
+        correctAnswer: '7',
+        explanation: 'A perfect fifth contains 7 semitones. For example, C to G is 7 semitones.'
+    },
+    {
+        id: 30,
+        type: 'true-false',
+        question: 'The natural minor scale is the same as the major scale starting from the 6th degree.',
+        correctAnswer: 'True',
+        explanation: 'Yes! The natural minor scale uses the same notes as its relative major, but starts from the 6th degree.'
+    },
+    {
+        id: 31,
+        type: 'multiple-choice',
+        question: 'What is the technical name for the "high E string"?',
+        options: ['1st string', '2nd string', '5th string', '6th string'],
+        correctAnswer: '1st string',
+        explanation: 'The high E string is technically called the 1st string, being the thinnest and highest pitched.'
+    },
+    {
+        id: 32,
+        type: 'fretboard-identify',
+        question: 'What note is on the 4th fret of the D string (4th string)?',
+        correctAnswer: 'F#',
+        explanation: 'Starting from D: D#(1st), E(2nd), F(3rd), F#(4th).'
+    },
+    {
+        id: 33,
+        type: 'multiple-choice',
+        question: 'Which interval is known as the "devil\'s interval" or tritone?',
+        options: ['Minor third', 'Perfect fourth', 'Diminished fifth', 'Major sixth'],
+        correctAnswer: 'Diminished fifth',
+        explanation: 'The diminished fifth (or augmented fourth) is 6 semitones and was historically called the "devil\'s interval".'
+    },
+    {
+        id: 34,
+        type: 'true-false',
+        question: 'Tablature shows which frets to press, not which notes to play.',
+        correctAnswer: 'True',
+        explanation: 'Yes! Tablature (tabs) shows fret numbers on string lines, indicating finger positions rather than note names.'
+    },
+    {
+        id: 35,
+        type: 'multiple-choice',
+        question: 'What is the relative major of A minor?',
+        options: ['C major', 'E major', 'F major', 'G major'],
+        correctAnswer: 'C major',
+        explanation: 'C major is the relative major of A minor. They share the same notes: A-B-C-D-E-F-G.'
+    },
+    {
+        id: 36,
+        type: 'fretboard-identify',
+        question: 'What note is on the 2nd fret of the G string (3rd string)?',
+        correctAnswer: 'A',
+        explanation: 'Starting from G: G#(1st), A(2nd).'
+    },
+    {
+        id: 37,
+        type: 'multiple-choice',
+        question: 'How many strings does a standard guitar have?',
+        options: ['4', '5', '6', '7'],
+        correctAnswer: '6',
+        explanation: 'A standard guitar has 6 strings, tuned E-A-D-G-B-E from thickest to thinnest.'
+    },
+    {
+        id: 38,
+        type: 'true-false',
+        question: 'The circle of fifths shows the relationship between different keys.',
+        correctAnswer: 'True',
+        explanation: 'Yes! The circle of fifths is a visual representation showing the relationships between the 12 major and minor keys.'
+    },
+    {
+        id: 39,
+        type: 'multiple-choice',
+        question: 'What is the solfege name for the 4th degree of a major scale?',
+        options: ['Mi', 'Fa', 'Sol', 'La'],
+        correctAnswer: 'Fa',
+        explanation: 'Fa is the solfege name for the 4th degree of the major scale.'
+    },
+    {
+        id: 40,
+        type: 'fretboard-identify',
+        question: 'What note is on the 3rd fret of the high E string (1st string)?',
+        correctAnswer: 'G',
+        explanation: 'Starting from E: F(1st), F#(2nd), G(3rd).'
+    },
+    {
+        id: 41,
+        type: 'multiple-choice',
+        question: 'Which scale has the pattern: W-H-W-W-H-W-W?',
+        options: ['Major scale', 'Natural minor scale', 'Harmonic minor scale', 'Pentatonic scale'],
+        correctAnswer: 'Natural minor scale',
+        explanation: 'The natural minor scale follows the pattern W-H-W-W-H-W-W (whole and half steps).'
+    },
+    {
+        id: 42,
+        type: 'true-false',
+        question: 'Barre chords use one finger to press multiple strings.',
+        correctAnswer: 'True',
+        explanation: 'Yes! Barre chords use one finger (usually the index) to press across multiple strings at the same fret.'
+    },
+    {
+        id: 43,
+        type: 'multiple-choice',
+        question: 'What is the distance between two adjacent frets called?',
+        options: ['Whole step', 'Half step', 'Tone', 'Interval'],
+        correctAnswer: 'Half step',
+        explanation: 'Each fret represents a half step (semitone) in pitch.'
+    },
+    {
+        id: 44,
+        type: 'fretboard-identify',
+        question: 'What note is on the 5th fret of the G string (3rd string)?',
+        correctAnswer: 'C',
+        explanation: 'The 5th fret of the G string produces C. This is the same as the open high E string moved down an octave.'
+    },
+    {
+        id: 45,
+        type: 'multiple-choice',
+        question: 'Which mode is built on the 2nd degree of the major scale?',
+        options: ['Ionian', 'Dorian', 'Phrygian', 'Lydian'],
+        correctAnswer: 'Dorian',
+        explanation: 'Dorian mode is built on the 2nd degree of the major scale. It has a minor quality with a raised 6th.'
+    },
+    {
+        id: 46,
+        type: 'true-false',
+        question: 'Power chords contain only the root and fifth.',
+        correctAnswer: 'True',
+        explanation: 'Yes! Power chords typically contain only the root note and the perfect fifth, sometimes with the octave.'
+    },
+    {
+        id: 47,
+        type: 'multiple-choice',
+        question: 'What is the solfege name for the 6th degree of a major scale?',
+        options: ['Sol', 'La', 'Ti', 'Do'],
+        correctAnswer: 'La',
+        explanation: 'La is the solfege name for the 6th degree of the major scale.'
+    },
+    {
+        id: 48,
+        type: 'fretboard-identify',
+        question: 'What note is on the 7th fret of the A string (5th string)?',
+        correctAnswer: 'E',
+        explanation: 'Starting from A: A#(1st), B(2nd), C(3rd), C#(4th), D(5th), D#(6th), E(7th).'
+    },
+    {
+        id: 49,
+        type: 'multiple-choice',
+        question: 'How many sharps does the A major scale have?',
+        options: ['1', '2', '3', '4'],
+        correctAnswer: '3',
+        explanation: 'A major has 3 sharps: F#, C#, and G#. The notes are A-B-C#-D-E-F#-G#.'
+    },
+    {
+        id: 50,
+        type: 'true-false',
+        question: 'The leading tone is the 7th degree of the major scale.',
+        correctAnswer: 'True',
+        explanation: 'Yes! The 7th degree of the major scale is called the leading tone because it "leads" back to the tonic (1st degree).'
     }
 ];
 
@@ -201,9 +516,8 @@ let currentQuestion = 0;
 let selectedAnswer = null;
 let userAnswers = [];
 let showResults = false;
-let timeLeft = 300; // 5 minutes
+let timeLeft = 450; // 7.5 minutes for 15 questions
 let timerActive = false;
-let quizTimer = null;
 
 // ===== AUDIO FUNCTIONS =====
 function initAudioContext() {
