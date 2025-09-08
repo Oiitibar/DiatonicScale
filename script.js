@@ -508,7 +508,7 @@ let currentExercise = 0;
 let isPlaying = false;
 let metronomeActive = false;
 let bpm = 80;
-let metronomeInterval = null;
+let metronomeInterval = null; 
 
 // Quiz variables
 let quizStarted = false;
