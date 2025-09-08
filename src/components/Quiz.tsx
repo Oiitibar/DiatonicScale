@@ -22,11 +22,10 @@ const Quiz: React.FC = () => {
   const [userAnswers, setUserAnswers] = useState<(string | number | null)[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [quizStarted, setQuizStarted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(450); // 7.5 minutes for 15 questions
+  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes
   const [timerActive, setTimerActive] = useState(false);
-  const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([]);
 
-  const allQuestions: Question[] = [
+  const questions: Question[] = [
     {
       id: 1,
       type: 'multiple-choice',
@@ -86,329 +85,8 @@ const Quiz: React.FC = () => {
       question: 'What note is on the 5th fret of the low E string (6th string)?',
       correctAnswer: 'A',
       explanation: 'The low E string open is E. The 5th fret of the E string produces an A note.'
-    },
-    {
-      id: 9,
-      type: 'multiple-choice',
-      question: 'What is the interval between the root and the fifth in a major scale?',
-      options: ['Perfect 4th', 'Perfect 5th', 'Major 6th', 'Minor 7th'],
-      correctAnswer: 'Perfect 5th',
-      explanation: 'The interval from the root to the fifth degree of a major scale is a Perfect 5th (7 semitones).'
-    },
-    {
-      id: 10,
-      type: 'true-false',
-      question: 'The G string is the 3rd string on a guitar.',
-      correctAnswer: 'True',
-      explanation: 'True. Counting from the thinnest string: 1st-E, 2nd-B, 3rd-G, 4th-D, 5th-A, 6th-E.'
-    },
-    {
-      id: 11,
-      type: 'multiple-choice',
-      question: 'How many sharps does the key of D Major have?',
-      options: ['1', '2', '3', '4'],
-      correctAnswer: '2',
-      explanation: 'D Major has 2 sharps: F# and C#. The notes are D-E-F#-G-A-B-C#.'
-    },
-    {
-      id: 12,
-      type: 'fretboard-identify',
-      question: 'What note is on the 2nd fret of the D string (4th string)?',
-      correctAnswer: 'E',
-      explanation: 'The D string open is D. The 2nd fret produces an E note (D# on 1st fret, E on 2nd fret).'
-    },
-    {
-      id: 13,
-      type: 'multiple-choice',
-      question: 'What is the relative minor of C Major?',
-      options: ['A Minor', 'E Minor', 'D Minor', 'G Minor'],
-      correctAnswer: 'A Minor',
-      explanation: 'A Minor is the relative minor of C Major. They share the same notes but start from different roots.'
-    },
-    {
-      id: 14,
-      type: 'true-false',
-      question: 'A whole step equals two frets on the guitar.',
-      correctAnswer: 'True',
-      explanation: 'True. A whole step (whole tone) equals 2 semitones, which is 2 frets on the guitar.'
-    },
-    {
-      id: 15,
-      type: 'multiple-choice',
-      question: 'Which note is NOT in the C Major scale?',
-      options: ['D', 'F#', 'G', 'A'],
-      correctAnswer: 'F#',
-      explanation: 'F# is not in C Major. C Major contains only natural notes: C-D-E-F-G-A-B.'
-    },
-    {
-      id: 16,
-      type: 'fretboard-identify',
-      question: 'What note is on the 7th fret of the A string (5th string)?',
-      correctAnswer: 'E',
-      explanation: 'Starting from A (open), count up 7 frets: A#-B-C-C#-D-D#-E.'
-    },
-    {
-      id: 17,
-      type: 'multiple-choice',
-      question: 'What does "Do" represent in the solfege system?',
-      options: ['The 2nd degree', 'The root note', 'The 5th degree', 'The 7th degree'],
-      correctAnswer: 'The root note',
-      explanation: '"Do" represents the root note (1st degree) of the scale in the solfege system.'
-    },
-    {
-      id: 18,
-      type: 'true-false',
-      question: 'The B string is tuned to the same note as the 2nd fret of the G string.',
-      correctAnswer: 'False',
-      explanation: 'False. The B string (open) is the same as the 4th fret of the G string, not the 2nd fret.'
-    },
-    {
-      id: 19,
-      type: 'multiple-choice',
-      question: 'How many flats does the key of F Major have?',
-      options: ['0', '1', '2', '3'],
-      correctAnswer: '1',
-      explanation: 'F Major has 1 flat: Bb. The notes are F-G-A-Bb-C-D-E.'
-    },
-    {
-      id: 20,
-      type: 'fretboard-identify',
-      question: 'What note is on the 12th fret of any string?',
-      correctAnswer: 'Same as open string',
-      explanation: 'The 12th fret produces the same note as the open string, but one octave higher.'
-    },
-    {
-      id: 21,
-      type: 'multiple-choice',
-      question: 'What is the pattern of whole and half steps in a major scale?',
-      options: ['W-W-H-W-W-W-H', 'W-H-W-W-H-W-W', 'H-W-W-H-W-W-W', 'W-W-W-H-W-W-H'],
-      correctAnswer: 'W-W-H-W-W-W-H',
-      explanation: 'The major scale pattern is: Whole-Whole-Half-Whole-Whole-Whole-Half.'
-    },
-    {
-      id: 22,
-      type: 'true-false',
-      question: 'E Minor has the same notes as G Major.',
-      correctAnswer: 'True',
-      explanation: 'True. E Minor is the relative minor of G Major, so they share the same notes.'
-    },
-    {
-      id: 23,
-      type: 'multiple-choice',
-      question: 'What is the 4th degree of the C Major scale?',
-      options: ['E', 'F', 'G', 'A'],
-      correctAnswer: 'F',
-      explanation: 'In C Major (C-D-E-F-G-A-B), F is the 4th degree.'
-    },
-    {
-      id: 24,
-      type: 'fretboard-identify',
-      question: 'What note is on the 1st fret of the B string (2nd string)?',
-      correctAnswer: 'C',
-      explanation: 'The B string open is B. The 1st fret produces a C note.'
-    },
-    {
-      id: 25,
-      type: 'multiple-choice',
-      question: 'Which solfege syllable represents the 3rd degree of a major scale?',
-      options: ['Re', 'Mi', 'Fa', 'Sol'],
-      correctAnswer: 'Mi',
-      explanation: '"Mi" represents the 3rd degree of the major scale in solfege.'
-    },
-    {
-      id: 26,
-      type: 'true-false',
-      question: 'A half step equals one fret on the guitar.',
-      correctAnswer: 'True',
-      explanation: 'True. A half step (semitone) equals exactly one fret on the guitar.'
-    },
-    {
-      id: 27,
-      type: 'multiple-choice',
-      question: 'How many sharps does the key of A Major have?',
-      options: ['2', '3', '4', '5'],
-      correctAnswer: '3',
-      explanation: 'A Major has 3 sharps: F#, C#, and G#.'
-    },
-    {
-      id: 28,
-      type: 'fretboard-identify',
-      question: 'What note is on the 3rd fret of the high E string (1st string)?',
-      correctAnswer: 'G',
-      explanation: 'Starting from E (open): F (1st fret), F# (2nd fret), G (3rd fret).'
-    },
-    {
-      id: 29,
-      type: 'multiple-choice',
-      question: 'What is the relative major of A Minor?',
-      options: ['C Major', 'F Major', 'G Major', 'D Major'],
-      correctAnswer: 'C Major',
-      explanation: 'C Major is the relative major of A Minor. They share the same notes.'
-    },
-    {
-      id: 30,
-      type: 'true-false',
-      question: 'The 5th fret of the low E string produces the same note as the open A string.',
-      correctAnswer: 'True',
-      explanation: 'True. The 5th fret of the low E string produces an A note, same as the open A string.'
-    },
-    {
-      id: 31,
-      type: 'multiple-choice',
-      question: 'Which degree of the scale is called the "leading tone"?',
-      options: ['6th', '7th', '1st', '5th'],
-      correctAnswer: '7th',
-      explanation: 'The 7th degree is called the leading tone because it leads back to the root (octave).'
-    },
-    {
-      id: 32,
-      type: 'fretboard-identify',
-      question: 'What note is on the 5th fret of the G string (3rd string)?',
-      correctAnswer: 'C',
-      explanation: 'Starting from G (open), count up 5 frets: G#-A-A#-B-C.'
-    },
-    {
-      id: 33,
-      type: 'multiple-choice',
-      question: 'What is the pattern of whole and half steps in a natural minor scale?',
-      options: ['W-H-W-W-H-W-W', 'W-W-H-W-W-W-H', 'H-W-W-H-W-W-W', 'W-W-W-H-W-W-H'],
-      correctAnswer: 'W-H-W-W-H-W-W',
-      explanation: 'The natural minor scale pattern is: Whole-Half-Whole-Whole-Half-Whole-Whole.'
-    },
-    {
-      id: 34,
-      type: 'true-false',
-      question: 'G Major and E Minor are relative keys.',
-      correctAnswer: 'True',
-      explanation: 'True. G Major and E Minor share the same key signature (one sharp: F#).'
-    },
-    {
-      id: 35,
-      type: 'multiple-choice',
-      question: 'Which note is the 6th degree of the C Major scale?',
-      options: ['F', 'G', 'A', 'B'],
-      correctAnswer: 'A',
-      explanation: 'In C Major (C-D-E-F-G-A-B), A is the 6th degree.'
-    },
-    {
-      id: 36,
-      type: 'fretboard-identify',
-      question: 'What note is on the 2nd fret of the G string (3rd string)?',
-      correctAnswer: 'A',
-      explanation: 'Starting from G (open): G# (1st fret), A (2nd fret).'
-    },
-    {
-      id: 37,
-      type: 'multiple-choice',
-      question: 'What solfege syllable represents the 6th degree?',
-      options: ['Sol', 'La', 'Ti', 'Do'],
-      correctAnswer: 'La',
-      explanation: '"La" represents the 6th degree of the scale in solfege.'
-    },
-    {
-      id: 38,
-      type: 'true-false',
-      question: 'The distance from C to G is a perfect 5th.',
-      correctAnswer: 'True',
-      explanation: 'True. C to G spans 7 semitones, which is a perfect 5th interval.'
-    },
-    {
-      id: 39,
-      type: 'multiple-choice',
-      question: 'How many notes are in a chromatic scale?',
-      options: ['7', '8', '12', '24'],
-      correctAnswer: '12',
-      explanation: 'A chromatic scale contains all 12 semitones within an octave.'
-    },
-    {
-      id: 40,
-      type: 'fretboard-identify',
-      question: 'What note is on the 4th fret of the D string (4th string)?',
-      correctAnswer: 'F#',
-      explanation: 'Starting from D (open): D# (1st), E (2nd), F (3rd), F# (4th fret).'
-    },
-    {
-      id: 41,
-      type: 'multiple-choice',
-      question: 'Which key has 4 sharps?',
-      options: ['D Major', 'A Major', 'E Major', 'B Major'],
-      correctAnswer: 'E Major',
-      explanation: 'E Major has 4 sharps: F#, C#, G#, and D#.'
-    },
-    {
-      id: 42,
-      type: 'true-false',
-      question: 'The 7th fret of any string produces the same note as the 12th fret of the string below it.',
-      correctAnswer: 'False',
-      explanation: 'False. The 7th fret produces the same note as the open string below it, not the 12th fret.'
-    },
-    {
-      id: 43,
-      type: 'multiple-choice',
-      question: 'What is the 2nd degree of the G Major scale?',
-      options: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'A',
-      explanation: 'In G Major (G-A-B-C-D-E-F#), A is the 2nd degree.'
-    },
-    {
-      id: 44,
-      type: 'fretboard-identify',
-      question: 'What note is on the 9th fret of the low E string (6th string)?',
-      correctAnswer: 'C#',
-      explanation: 'Starting from E, count up 9 frets: F-F#-G-G#-A-A#-B-C-C#.'
-    },
-    {
-      id: 45,
-      type: 'multiple-choice',
-      question: 'Which solfege syllable represents the 7th degree?',
-      options: ['La', 'Ti', 'Do', 'Re'],
-      correctAnswer: 'Ti',
-      explanation: '"Ti" represents the 7th degree (leading tone) of the scale in solfege.'
-    },
-    {
-      id: 46,
-      type: 'true-false',
-      question: 'D Minor has one flat in its key signature.',
-      correctAnswer: 'True',
-      explanation: 'True. D Minor has one flat: Bb. The notes are D-E-F-G-A-Bb-C.'
-    },
-    {
-      id: 47,
-      type: 'multiple-choice',
-      question: 'What interval is from C to F?',
-      options: ['Major 3rd', 'Perfect 4th', 'Perfect 5th', 'Major 6th'],
-      correctAnswer: 'Perfect 4th',
-      explanation: 'C to F spans 5 semitones, which is a perfect 4th interval.'
-    },
-    {
-      id: 48,
-      type: 'fretboard-identify',
-      question: 'What note is on the 8th fret of the A string (5th string)?',
-      correctAnswer: 'F',
-      explanation: 'Starting from A, count up 8 frets: A#-B-C-C#-D-D#-E-F.'
-    },
-    {
-      id: 49,
-      type: 'multiple-choice',
-      question: 'Which scale degree is called the "subdominant"?',
-      options: ['3rd', '4th', '5th', '6th'],
-      correctAnswer: '4th',
-      explanation: 'The 4th degree is called the subdominant. In C Major, F is the subdominant.'
-    },
-    {
-      id: 50,
-      type: 'true-false',
-      question: 'All major scales have the same pattern of intervals.',
-      correctAnswer: 'True',
-      explanation: 'True. All major scales follow the same interval pattern: W-W-H-W-W-W-H.'
     }
   ];
-
-  // Function to randomly select 15 questions from the pool of 50
-  const selectRandomQuestions = (questions: Question[], count: number): Question[] => {
-    const shuffled = [...questions].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  };
 
   useEffect(() => {
     if (timerActive && timeLeft > 0) {
@@ -420,14 +98,12 @@ const Quiz: React.FC = () => {
   }, [timeLeft, timerActive]);
 
   const startQuiz = () => {
-    const randomQuestions = selectRandomQuestions(allQuestions, 15);
-    setSelectedQuestions(randomQuestions);
     setQuizStarted(true);
     setTimerActive(true);
     setCurrentQuestion(0);
-    setUserAnswers(new Array(15).fill(null)); // Always 15 questions
+    setUserAnswers(new Array(questions.length).fill(null));
     setShowResults(false);
-    setTimeLeft(450); // 7.5 minutes for 15 questions
+    setTimeLeft(300);
   };
 
   const handleAnswerSelect = (answer: string | number) => {
@@ -440,7 +116,7 @@ const Quiz: React.FC = () => {
     setUserAnswers(newAnswers);
     setSelectedAnswer(null);
 
-    if (currentQuestion < selectedQuestions.length - 1) {
+    if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       handleFinishQuiz();
@@ -461,12 +137,12 @@ const Quiz: React.FC = () => {
 
   const calculateScore = () => {
     let correct = 0;
-    selectedQuestions.forEach((question, index) => {
+    questions.forEach((question, index) => {
       if (userAnswers[index] === question.correctAnswer) {
         correct++;
       }
     });
-    return { correct, total: selectedQuestions.length, percentage: Math.round((correct / selectedQuestions.length) * 100) };
+    return { correct, total: questions.length, percentage: Math.round((correct / questions.length) * 100) };
   };
 
   const resetQuiz = () => {
@@ -476,12 +152,11 @@ const Quiz: React.FC = () => {
     setUserAnswers([]);
     setShowResults(false);
     setTimerActive(false);
-    setTimeLeft(450);
-    setSelectedQuestions([]);
+    setTimeLeft(300);
   };
 
   const playQuestionAudio = () => {
-    const currentQ = selectedQuestions[currentQuestion];
+    const currentQ = questions[currentQuestion];
     if (currentQ.audioNote) {
       const frequency = NOTE_FREQUENCIES[currentQ.audioNote];
       if (frequency) {
@@ -510,14 +185,14 @@ const Quiz: React.FC = () => {
           </div>
           
           <p className={`text-xl mb-8 max-w-2xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            Test your knowledge of diatonic scales, guitar tuning, and fretboard theory from a pool of 50 questions. 
-            You have 7.5 minutes to complete 15 randomly selected questions.
+            Test your knowledge of diatonic scales, guitar tuning, and fretboard theory. 
+            You have 5 minutes to complete {questions.length} questions.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { icon: Target, title: 'Questions', value: '15', color: 'blue' },
-              { icon: Brain, title: 'Time Limit', value: '7.5 min', color: 'green' },
+              { icon: Target, title: 'Questions', value: questions.length, color: 'blue' },
+              { icon: Brain, title: 'Time Limit', value: '5 min', color: 'green' },
               { icon: Trophy, title: 'Passing Score', value: '70%', color: 'yellow' }
             ].map((item, index) => {
               const Icon = item.icon;
@@ -646,7 +321,7 @@ const Quiz: React.FC = () => {
             Question Review
           </h2>
           <div className="space-y-4">
-            {selectedQuestions.map((question, index) => {
+            {questions.map((question, index) => {
               const userAnswer = userAnswers[index];
               const isCorrect = userAnswer === question.correctAnswer;
               
@@ -703,8 +378,8 @@ const Quiz: React.FC = () => {
     );
   }
 
-  const currentQ = selectedQuestions[currentQuestion];
-  const progress = ((currentQuestion + 1) / selectedQuestions.length) * 100;
+  const currentQ = questions[currentQuestion];
+  const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -714,7 +389,7 @@ const Quiz: React.FC = () => {
           <div className="flex items-center space-x-4">
             <Brain className={`w-6 h-6 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`} />
             <span className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Question {currentQuestion + 1} of {selectedQuestions.length}
+              Question {currentQuestion + 1} of {questions.length}
             </span>
           </div>
           <div className={`flex items-center space-x-4 ${
@@ -819,7 +494,7 @@ const Quiz: React.FC = () => {
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
           >
-            {currentQuestion === selectedQuestions.length - 1 ? 'Finish Quiz' : 'Next Question'}
+            {currentQuestion === questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
           </button>
         </div>
       </div>
