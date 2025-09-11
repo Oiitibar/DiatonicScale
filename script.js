@@ -254,7 +254,7 @@ let currentQuestion = 0;
 let selectedAnswer = null;
 let userAnswers = [];
 let showResults = false;
-let timeLeft = 450; // 7.5 minutes for 15 questions
+let timeLeft = 240; // 7.5 minutes for 15 questions
 let timerActive = false;
 
 // ===== AUDIO FUNCTIONS =====
@@ -990,7 +990,7 @@ function startQuiz() {
     userAnswers = new Array(QUIZ_QUESTIONS.length).fill(null);
     selectedAnswer = null;
     showResults = false;
-    timeLeft = 300;
+    timeLeft = 240;
     timerActive = true;
     
     // Hide start screen, show questions
@@ -1254,7 +1254,7 @@ function resetQuiz() {
     selectedQuestions = [];
     showResults = false;
     timerActive = false;
-    timeLeft = 450;
+    timeLeft = 240;
     
     if (quizTimer) {
         clearInterval(quizTimer);
