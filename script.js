@@ -191,9 +191,10 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: 10,
+        type: 'multiple-choice',
         question: "What is the first note of the C major scale called?",
         options: ["Tonic", "Dominant", "Subdominant", "Leading tone"],
-        correct: 0,
+        correct: "Tonic",
         explanation: "The first note of any scale is called the tonic or root note."
     },
 ];
