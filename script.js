@@ -191,11 +191,10 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: 10,
-        type: 'multiple-choice',
-        question: "What is the first note of the C major scale called?",
-        options: ["Tonic", "Dominant", "Subdominant", "Leading tone"],
-        correct: "Tonic",
-        explanation: "The first note of any scale is called the tonic or root note."
+        type: 'true-false',
+        question: 'The 12th fret produces the same note as the open string, one octave higher.',
+        correctAnswer: 'True',
+        explanation: 'Yes! The 12th fret is exactly one octave higher than the open string note.'
     },
 ];
 
