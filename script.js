@@ -176,14 +176,6 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: 8,
-<<<<<<< Updated upstream
-        type: 'fretboard-identify',
-        question: 'What note is on the 5th fret of the low E string (6th string)?',
-        correctAnswer: 'A',
-        explanation: 'The low E string open is E. The 5th fret of the E string produces an A note.'
-    },
-    {
-=======
         type: 'multiple-choice',
         question: 'How many sharps does the D major scale have?',
         options: ['1', '2', '3', '4'],
@@ -191,7 +183,6 @@ const QUIZ_QUESTIONS = [
         explanation: 'D major has 2 sharps: F# and C#. The notes are D-E-F#-G-A-B-C#.'
     },
     {    
->>>>>>> Stashed changes
         id: 9,
         type: 'multiple-choice',
         question: 'What is the interval between C and E?',
@@ -201,51 +192,6 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: 10,
-<<<<<<< Updated upstream
-        type: 'true-false',
-        question: 'The G major scale has one sharp.',
-        correctAnswer: 'True',
-        explanation: 'G major scale has one sharp: F#. The notes are G-A-B-C-D-E-F#.'
-    },
-    {
-        id: 11,
-        type: 'multiple-choice',
-        question: 'Which note is the relative minor of C major?',
-        options: ['A', 'E', 'F', 'D'],
-        correctAnswer: 'A',
-        explanation: 'A minor is the relative minor of C major. They share the same notes but start from different root notes.'
-    },
-    {
-        id: 12,
-        type: 'fretboard-identify',
-        question: 'What note is on the 2nd fret of the D string (4th string)?',
-        correctAnswer: 'E',
-        explanation: 'The D string open is D. The 2nd fret produces E (D# on 1st fret, E on 2nd fret).'
-    },
-    {
-        id: 13,
-        type: 'multiple-choice',
-        question: 'How many sharps does the D major scale have?',
-        options: ['1', '2', '3', '4'],
-        correctAnswer: '2',
-        explanation: 'D major has 2 sharps: F# and C#. The notes are D-E-F#-G-A-B-C#.'
-    },
-    {
-        id: 14,
-        type: 'true-false',
-        question: 'The 12th fret produces the same note as the open string, one octave higher.',
-        correctAnswer: 'True',
-        explanation: 'Yes! The 12th fret is exactly one octave higher than the open string note.'
-    },
-    {
-        id: 15,
-        type: 'multiple-choice',
-        question: 'What is the first note in the solfege system?',
-        options: ['Do', 'Re', 'Mi', 'Fa'],
-        correctAnswer: 'Do',
-        explanation: 'Do is the first note in the solfege system, representing the tonic or root note of the scale.'
-    }
-=======
         type: 'multiple-choice',
         question: "What is the first note of the C major scale called?",
         options: ["Tonic", "Dominant", "Subdominant", "Leading tone"],
@@ -286,8 +232,7 @@ const QUIZ_QUESTIONS = [
 //        options: ['Do', 'Re', 'Mi', 'Fa'],
 //        correctAnswer: 'Do',
 //        explanation: 'Do is the first note in the solfege system, representing the tonic or root note of the scale.'
-    
->>>>>>> Stashed changes
+
 ];
 
 // ===== GLOBAL VARIABLES =====
