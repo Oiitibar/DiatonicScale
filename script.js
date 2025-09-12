@@ -153,49 +153,13 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: 5,
-        type: 'multiple-choice',
-        question: 'Which note is the relative minor of C major?',
-        options: ['A', 'E', 'F', 'D'],
-        correctAnswer: 'A',
-        explanation: 'A minor is the relative minor of C major. They share the same notes but start from different root notes.'
-    },
-    {
-        id: 6,
-        type: 'true-false',
-        question: 'Minor scales sound generally brighter and happier than major scales.',
-        correctAnswer: 'False',
-        explanation: 'False. Minor scales typically sound darker and more melancholic, while major scales sound brighter and happier.'
-    },
-    {
-        id: 7,
-        type: 'multiple-choice',
-        question: 'How many frets are typically on a standard acoustic guitar?',
-        options: ['12', '15', '20', '24'],
-        correctAnswer: '20',
-        explanation: 'Most standard acoustic guitars have 20 frets, though some may have 19 or 21.'
-    },
-    {
-        id: 8,
-        type: 'fretboard-identify',
-        question: 'What note is on the 5th fret of the low E string (6th string)?',
-        correctAnswer: 'A',
-        explanation: 'The low E string open is E. The 5th fret of the E string produces an A note.'
-    },
-    {
-        id: 9,
-        type: 'multiple-choice',
+         type: 'multiple-choice',
         question: 'What is the interval between C and E?',
         options: ['Minor third', 'Major third', 'Perfect fourth', 'Perfect fifth'],
         correctAnswer: 'Major third',
         explanation: 'C to E is a major third interval, consisting of 4 semitones.'
     },
-    {
-        id: 10,
-        type: 'true-false',
-        question: 'The 12th fret produces the same note as the open string, one octave higher.',
-        correctAnswer: 'True',
-        explanation: 'Yes! The 12th fret is exactly one octave higher than the open string note.'
-    },
+
 ];
 
 // ===== GLOBAL VARIABLES =====
